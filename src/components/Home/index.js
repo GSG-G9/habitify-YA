@@ -35,6 +35,7 @@ class Home extends React.Component {
     const { name } = this.state;
     return (
       <div>
+        <h1>Welcome to Habitify</h1>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="username">
             Enter your name :

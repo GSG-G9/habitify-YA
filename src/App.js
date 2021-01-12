@@ -26,8 +26,7 @@ class App extends React.Component {
     const { name } = this.state;
     return (
       <Router>
-        <div className="App">
-          <h1>Welcome to Habitify</h1>
+        <>
           <Switch>
             <Route
               exact
@@ -54,7 +53,7 @@ class App extends React.Component {
             />
             <Redirect to="/" />
           </Switch>
-        </div>
+        </>
       </Router>
     );
   }

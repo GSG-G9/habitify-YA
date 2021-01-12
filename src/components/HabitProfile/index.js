@@ -10,26 +10,23 @@ import add from '../../images/add.png';
 
 import './style.css';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class HabitProfile extends React.Component {
-  render() {
-    const { name } = this.props;
-    return (
-      <section className="habit-profile">
-        <section className="habit-profile-header">
-          <img src={user} alt="user" />
-          <h2>{name}</h2>
-        </section>
-        <Link to="/profile"> Pending </Link>
-        <Link to="/completed"> Completed </Link>
-        <Link to="/new">
-          <img src={add} alt="Add" />
-        </Link>
-        <section />
+const HabitProfile = (props) => {
+  const { name } = props;
+  return (
+    <section className="habit-profile">
+      <section className="habit-profile-header">
+        <img src={user} alt="user" />
+        <h2 className="habit-profile-header-name">{name}</h2>
       </section>
-    );
-  }
-}
+      <Link to="/profile"> Pending </Link>
+      <Link to="/completed"> Completed </Link>
+      <Link to="/new">
+        <img src={add} alt="Add" />
+      </Link>
+      <section />
+    </section>
+  );
+};
 
 HabitProfile.propTypes = {
   name: PropTypes.string.isRequired,
