@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 class AddHabit extends React.Component {
   state = {
     habits: [
-      { id: 1, habit: 'Drink Water' },
+      { id: 1, habit: 'Create your own ' },
       { id: 2, habit: 'read Books' },
       { id: 3, habit: 'Running' },
       { id: 4, habit: 'Swimming' },
       { id: 5, habit: 'Wear a mask' },
+      { id: 6, habit: 'Drink Water' },
     ],
   };
 
