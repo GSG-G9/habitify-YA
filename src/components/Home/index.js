@@ -6,11 +6,10 @@ import "./style.css";
 
 class Home extends React.Component{
     state ={
-        name: 'Guest'
+        name: ''
     };
 
-    handleName = (event) =>{
-        event.preventDefault();
+    setName = (event) =>{
         this.setState((previousState)=>{
             console.log(event.target.value)
             return {
@@ -20,19 +19,16 @@ class Home extends React.Component{
     }
     Start =(event)=>{
         event.preventDefault();
-        this.setState((previousState)=>{
-            console.log(event.target)
-            return {
-                name: event.target.value
-            }
-        })
+        const name = this.state.name;
+        console.log('zftname' , name);
+        this.props.HandleName(name);
     }
 
   render(){
     return(
         <div>
             <form>
-                <input type="text" name="text" value={this.state.name} placeholder="Enter your name" onChange={this.handleName}/>
+                <input type="text" name="text" value={this.state.name} placeholder="Enter your name" onChange={this.setName}/>
                 <button onClick={this.Start}>
                 <Link to="/profile">Start</Link>
                 </button>

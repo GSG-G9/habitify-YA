@@ -7,9 +7,20 @@ import Home from './components/Home/index';
 class App extends React.Component{
 
   state ={
-    name: 'Guest'
-  };
-  
+    name: ''
+  }
+  handleName=(newName)=>{
+    console.log(newName,'namestate');
+    // const name = this.state.name;
+    this.setState({ name : newName})
+    // console.log(name,'nameprops');
+    // return name;
+    // this.state.name = newName
+    //
+  //  const finalName = [...this.state.name, newName]
+  //  this.setState({finalName});
+  console.log('newnamestate' , this.state.name)
+  }
 
   render(){
       return(
@@ -17,9 +28,10 @@ class App extends React.Component{
             <div className="App">
             <h1>Welcome to Habitify</h1>
               <Switch>
-                  <Route exact path='/'>
-                    <Home/>
-                  </Route>
+                  <Route exact path='/'  render={(props)=>{
+                 return   <Home  HandleName={this.handleName}   {...props} />
+                  }} />
+                   
               </Switch>
           </div>
         </Router>
