@@ -20,9 +20,9 @@ class HabitProfile extends React.Component {
           <img src={user} alt="user" />
           <h2>{name}</h2>
         </section>
-        <Link to="/habits"> Pending </Link>
-        <Link to="/habits/completed"> Completed </Link>
-        <Link to="/habits/new">
+        <Link to="/profile"> Pending </Link>
+        <Link to="/completed"> Completed </Link>
+        <Link to="/new">
           <img src={add} alt="Add" />
         </Link>
         <section />

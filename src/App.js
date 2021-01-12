@@ -11,6 +11,8 @@ import Home from './components/Home/index';
 
 import HabitProfile from './components/HabitProfile/index';
 
+import AddHabit from './components/AddHabit/index'
+
 class App extends React.Component {
   state = {
     name: '',
@@ -40,7 +42,11 @@ class App extends React.Component {
               path="/profile"
               render={(props) => <HabitProfile name={name} {...props} />}
             />
-
+            <Route
+              exact
+              path="/new"
+              render={(props) => <AddHabit {...props} />}
+            />
             <Redirect to="/" />
           </Switch>
         </div>
