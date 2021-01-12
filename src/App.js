@@ -27,12 +27,20 @@ class App extends React.Component {
         <div className="App">
           <h1>Welcome to Habitify</h1>
           <Switch>
-            <Route exact path="/">
-              <Home handleName={this.handleName} />
-            </Route>
-            <Route exact path="/profile">
-              <HabitProfile name={name} />
-            </Route>
+            <Route
+              exact
+              path="/"
+              render={(props) => (
+                <Home handleName={this.handleName} {...props} />
+              )}
+            />
+
+            <Route
+              exact
+              path="/profile"
+              render={(props) => <HabitProfile name={name} {...props} />}
+            />
+
             <Redirect to="/" />
           </Switch>
         </div>

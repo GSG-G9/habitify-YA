@@ -29,7 +29,8 @@
                     "singleQuote" :true
                 }
             ],
-         "react/state-in-constructor": [0, "never"]
+         "react/state-in-constructor": [0, "never"],
+         "react/jsx-props-no-spreading": [0]
 
     }
 

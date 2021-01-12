@@ -22,7 +22,9 @@ class Home extends React.Component {
     const { name } = this.state;
     event.preventDefault();
     if (name === '') {
-      this.setState({ name: 'Guest' });
+      this.setState(() => ({
+        name: 'Guest',
+      }));
     } else {
       handleName(name);
       push('/profile');

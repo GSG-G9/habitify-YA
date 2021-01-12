@@ -9,6 +9,7 @@ import user from '../../images/user.png';
 import add from '../../images/add.png';
 
 import './style.css';
+
 // eslint-disable-next-line react/prefer-stateless-function
 class HabitProfile extends React.Component {
   render() {
