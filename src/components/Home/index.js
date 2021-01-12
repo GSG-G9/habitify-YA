@@ -1,30 +1,28 @@
 import React from "react";
 
-import { Link, Route , Switch} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 
-class Home extends React.Component{
-    state ={
+class Home extends React.Component {
+    state = {
         name: ''
     };
 
-    setName = (event) =>{
+    setName = (event) => {
         this.setState((previousState)=>{
-            console.log(event.target.value)
             return {
                 name: event.target.value
             }
         })
     }
-    Start =(event)=>{
+    Start =(event) => {
         event.preventDefault();
         const name = this.state.name;
-        console.log('zftname' , name);
         this.props.HandleName(name);
     }
 
-  render(){
+  render() {
     return(
         <div>
             <form>
