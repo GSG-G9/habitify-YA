@@ -11,7 +11,7 @@ import Home from './components/Home/index';
 
 import HabitProfile from './components/HabitProfile/index';
 
-import AddHabit from './components/AddHabit/index'
+import AddHabit from './components/AddHabit/index';
 
 class App extends React.Component {
   state = {
