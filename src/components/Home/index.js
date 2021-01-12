@@ -18,6 +18,8 @@ class Home extends React.Component {
         })
     }
     handleSubmit =(event) => {
+        const {handleName,history:{push}} = this.props;
+        const name = this.state.name;
         event.preventDefault();
         if(this.state.name === ''){
             this.setState((previousState)=>{
@@ -26,9 +28,7 @@ class Home extends React.Component {
                 }
             })
         }else{
-            const {history:{push}} = this.props;
-            const name = this.state.name;
-            this.props.HandleName(name);
+            handleName(name);
             push('/profile');
         }
 

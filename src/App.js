@@ -9,7 +9,7 @@ class App extends React.Component {
     name: '',
   };
   
-  HandleName = (newName) => {
+  handleName = (newName) => {
     this.setState((previousState) => {
       return {
         name: newName,
@@ -27,7 +27,7 @@ class App extends React.Component {
               exact
               path='/'
               render={(props) => {
-                return <Home HandleName={this.HandleName} {...props} />;
+                return <Home handleName={this.handleName} {...props} />;
               }}
             />
           </Switch>
