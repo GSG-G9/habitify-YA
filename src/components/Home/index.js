@@ -9,27 +9,40 @@ class Home extends React.Component {
         name: ''
     };
 
-    setName = (event) => {
+
+    handleChange = (event) => {
         this.setState((previousState)=>{
             return {
                 name: event.target.value
             }
         })
     }
-    Start =(event) => {
+    handleSubmit =(event) => {
         event.preventDefault();
-        const name = this.state.name;
-        this.props.HandleName(name);
+        if(this.state.name === ''){
+            this.setState((previousState)=>{
+                return {
+                    name: 'Guest'
+                }
+            })
+        }else{
+            const {history:{push}} = this.props;
+            const name = this.state.name;
+            this.props.HandleName(name);
+            push('/profile');
+        }
+
     }
 
   render() {
     return(
         <div>
-            <form>
-                <input type="text" name="text" value={this.state.name} placeholder="Enter your name" onChange={this.setName}/>
-                <button onClick={this.Start}>
-                <Link to="/profile">Start</Link>
-                </button>
+            <form  onSubmit={this.handleSubmit}>
+                <label htmlFor="username">
+                Enter your name :
+                <input type="text" name="text" id="username" value={this.state.name} placeholder="username" onChange={this.handleChange}/>
+                </label>
+                <input type="submit"  value="Start" />
             </form>
         </div>
     )
