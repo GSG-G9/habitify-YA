@@ -20,7 +20,7 @@ const HabitProfile = (props) => {
       </section>
       <Link to="/profile"> Pending </Link>
       <Link to="/completed"> Completed </Link>
-      <Link to="/new">
+      <Link to="/new" className="habit-profile-add">
         <img src={add} alt="Add" />
       </Link>
       <section />
