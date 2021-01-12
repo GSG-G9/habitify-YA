@@ -45,7 +45,12 @@ class App extends React.Component {
             <Route
               exact
               path="/new"
-              render={(props) => <AddHabit {...props} />}
+              render={(props) => (
+                <div>
+                  <HabitProfile name={name} {...props} />
+                  <AddHabit {...props} />
+                </div>
+              )}
             />
             <Redirect to="/" />
           </Switch>
