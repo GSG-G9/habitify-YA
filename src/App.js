@@ -1,26 +1,42 @@
 import React from 'react';
 
 import {
-  Route,
   BrowserRouter as Router,
+  Route,
   Switch,
   Redirect,
 } from 'react-router-dom';
 
+import Home from './components/Home/index';
+
 import HabitProfile from './components/HabitProfile/index';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
+  state = {
+    name: '',
+  };
+
+  handleName = (newName) => {
+    this.setState({ name: newName });
+  };
+
   render() {
+    const { name } = this.state;
     return (
-      <div className="App">
-        <Router>
+      <Router>
+        <div className="App">
+          <h1>Welcome to Habitify</h1>
           <Switch>
-            <Route exact path="/habits" render={() => <HabitProfile />} />
+            <Route exact path="/">
+              <Home handleName={this.handleName} />
+            </Route>
+            <Route exact path="/profile">
+              <HabitProfile name={name} />
+            </Route>
             <Redirect to="/" />
           </Switch>
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }

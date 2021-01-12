@@ -1,4 +1,4 @@
-{
+{"parser": "babel-eslint",
     "env": {
         "browser": true,
         "es2021": true,
@@ -6,6 +6,7 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:prettier/recommended",
         "airbnb"
     ],
     "parserOptions": {
@@ -27,7 +28,8 @@
                 "error",{
                     "singleQuote" :true
                 }
-            ]
+            ],
+         "react/state-in-constructor": [0, "never"]
 
     }
 

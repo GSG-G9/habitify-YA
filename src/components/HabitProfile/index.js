@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { PropTypes } from 'prop-types';
+
 import { Link } from 'react-router-dom';
 
 import user from '../../images/user.png';
@@ -10,11 +12,12 @@ import './style.css';
 // eslint-disable-next-line react/prefer-stateless-function
 class HabitProfile extends React.Component {
   render() {
+    const { name } = this.props;
     return (
       <section className="habit-profile">
         <section className="habit-profile-header">
           <img src={user} alt="user" />
-          <h2> Guest Name</h2>
+          <h2>{name}</h2>
         </section>
         <Link to="/habits"> Pending </Link>
         <Link to="/habits/completed"> Completed </Link>
@@ -26,4 +29,8 @@ class HabitProfile extends React.Component {
     );
   }
 }
+
+HabitProfile.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 export default HabitProfile;
