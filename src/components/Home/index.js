@@ -21,7 +21,7 @@ class Home extends React.Component {
 
     const { name } = this.state;
     event.preventDefault();
-    if (name === '') {
+    if (name === ' ') {
       this.setState(() => ({
         name: 'Guest',
       }));
