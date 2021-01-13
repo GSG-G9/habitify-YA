@@ -3,39 +3,6 @@ import React from 'react';
 
 import './style.css';
 
-// const emptyValue = (props) => {
-//   const { match } = props;
-//   return (
-//     <label htmlFor="habitName">
-//       Habit Name
-//       <input type="text" name="habit name" id="habitName" value=" " />
-//     </label>
-//   );
-// };
-
-// const habitValue = (props) => {
-//   const { match } = props;
-//   const {
-//     params: { habit },
-//   } = match;
-//   return (
-//     <label htmlFor="habitName">
-//       Habit Name
-//       <input type="text" name="habit name" id="habitName" value={habit} />
-//     </label>
-//   );
-// };
-
-// const valueCondition = (props) => {
-//   const { match } = props;
-//   const {
-//     params: { habit },
-//   } = match;
-//   if (habit === 'Create your own') {
-//     return <emptyValue />;
-//   }
-//   return <habitValue />;
-// };
 const HabitForm = (props) => {
   const { match, habits } = props;
   const {
