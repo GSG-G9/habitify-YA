@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import HabitForm from '../HabitForm/index';
+import { PropTypes } from 'prop-types';
 
 const AddHabit = (props) => {
   const { habits } = props;
@@ -27,5 +27,7 @@ const AddHabit = (props) => {
     </div>
   );
 };
-
+AddHabit.propTypes = {
+  habits: PropTypes.shape.isRequired,
+};
 export default AddHabit;

@@ -15,8 +15,6 @@ import AddHabit from './components/AddHabit/index';
 
 import HabitForm from './components/HabitForm';
 
-import logo from './images/logo.svg';
-
 class App extends React.Component {
   state = {
     name: '',
@@ -28,14 +26,38 @@ class App extends React.Component {
       { id: 4, habit: 'Wear a mask' },
       { id: 5, habit: 'Drink Water' },
     ],
+    myHobies: [
+      {
+        id: Date.now(),
+        hobiName: 'CA Meeting',
+        repetition: 'daily',
+        reminder: '2021-01-13T08:59',
+        checkDone: false,
+      },
+    ],
   };
 
   handleName = (newName) => {
     this.setState({ name: newName });
   };
 
+  handleHabitData = (hobiName, repetition, reminder) => {
+    this.setState((previousState) => ({
+      myHobies: [
+        ...previousState.myHobies,
+        {
+          id: Date.now(),
+          hobiName,
+          repetition,
+          reminder,
+          checkDone: false,
+        },
+      ],
+    }));
+  };
+
   render() {
-    const { name, habits } = this.state;
+    const { name, habits, myHobies } = this.state;
     return (
       <Router>
         <Switch>
@@ -63,9 +85,16 @@ class App extends React.Component {
           <Route
             exact
             path="/newHabit/:habitId"
-            render={(props) => <HabitForm habits={habits} {...props} />}
+            render={(props) => (
+              <HabitForm
+                habits={habits}
+                handleHabitData={this.handleHabitData}
+                myHobies={myHobies}
+                {...props}
+              />
+            )}
           />
-          {/* <Redirect to="/" /> */}
+          <Redirect to="/" />
         </Switch>
       </Router>
     );
