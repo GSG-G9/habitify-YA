@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import './style.css';
+
 class AddHabit extends React.Component {
   state = {
     habits: [
@@ -25,7 +27,9 @@ class AddHabit extends React.Component {
           <ul>
             {habits.map((habit) => (
               <li key={habit.id}>
-                <Link to="/new/habit">{habit.habit}</Link>
+                <Link to="/new/habit" className="add-habit-card-link">
+                  {habit.habit}
+                </Link>
               </li>
             ))}
           </ul>
