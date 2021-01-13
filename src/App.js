@@ -13,6 +13,8 @@ import HabitProfile from './components/HabitProfile/index';
 
 import AddHabit from './components/AddHabit/index';
 
+import logo from './images/logo.svg';
+
 class App extends React.Component {
   state = {
     name: '',
@@ -25,8 +27,9 @@ class App extends React.Component {
   render() {
     const { name } = this.state;
     return (
-      <Router>
-        <>
+      <div className="app">
+        <img src={logo} alt="logo" />
+        <Router>
           <Switch>
             <Route
               exact
@@ -53,8 +56,8 @@ class App extends React.Component {
             />
             <Redirect to="/" />
           </Switch>
-        </>
-      </Router>
+        </Router>
+      </div>
     );
   }
 }
