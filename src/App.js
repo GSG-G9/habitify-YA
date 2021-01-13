@@ -13,11 +13,21 @@ import HabitProfile from './components/HabitProfile/index';
 
 import AddHabit from './components/AddHabit/index';
 
+import HabitForm from './components/HabitForm';
+
 import logo from './images/logo.svg';
 
 class App extends React.Component {
   state = {
     name: '',
+    habits: [
+      { id: 0, habit: 'Create your own ' },
+      { id: 1, habit: 'read Books' },
+      { id: 2, habit: 'Running' },
+      { id: 3, habit: 'Swimming' },
+      { id: 4, habit: 'Wear a mask' },
+      { id: 5, habit: 'Drink Water' },
+    ],
   };
 
   handleName = (newName) => {
@@ -25,7 +35,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { name } = this.state;
+    const { name, habits } = this.state;
     return (
       <Router>
         <Switch>
@@ -46,11 +56,16 @@ class App extends React.Component {
             render={(props) => (
               <>
                 <HabitProfile name={name} {...props} />
-                <AddHabit {...props} />
+                <AddHabit habits={habits} {...props} />
               </>
             )}
           />
-          <Redirect to="/" />
+          <Route
+            exact
+            path="/newHabit/:habitId"
+            render={(props) => <HabitForm habits={habits} {...props} />}
+          />
+          {/* <Redirect to="/" /> */}
         </Switch>
       </Router>
     );
