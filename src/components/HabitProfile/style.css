@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 *{
     box-sizing: border-box;
     margin:0;
     padding:0;
+    color : rgb(12, 55, 134);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.link{
+    text-decoration: none;
+    font-size:1.4em;
 }
 .habit-profile{
     widows: 100%;
@@ -11,13 +19,46 @@
    }
 .habit-profile-header{
     width:100%;
-    height: 30%;
-    background-color: #f0f;
-    }
+    background-color: rgba(148, 184, 243, 0.178);
+    display: flex;
+    justify-content:flex-end;    
+}
+
 .habit-profile-header-name{
     display: inline-block;
+   align-self: center;
     
 }
-.habit-profile-add{
-    align-self: end;
+.habit-profile-header-logout{
+    padding-left:3em;
+    align-self: center;
+    font-weight: bold;
+    padding-right: 2em;
+}
+.habit-profile-body{
+    display:flex;
+    height: 85vh;
+    justify-content: center;
+    flex-flow: row ;
+    position: relative;
+    font-weight: bold;
+
+}
+.habit-profile-body .link:first-of-type{
+    position: absolute;
+      left:10em;
+}
+.habit-profile-body .link:nth-child(2){
+    position: absolute;
+      left:18em;
+}
+.habit-profile-body-pending {
+    padding-right:1.5em;
+
+    /* background-color: rebeccapurple; */
+}
+.habit-profile-body-add{
+    align-self: flex-end;
+    position: absolute;
+       right: 3em;
 }
