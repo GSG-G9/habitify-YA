@@ -2,41 +2,32 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import './style.css';
+import { PropTypes } from 'prop-types';
 
-class AddHabit extends React.Component {
-  state = {
-    habits: [
-      { id: 1, habit: 'Create your own ' },
-      { id: 2, habit: 'read Books' },
-      { id: 3, habit: 'Running' },
-      { id: 4, habit: 'Swimming' },
-      { id: 5, habit: 'Wear a mask' },
-      { id: 6, habit: 'Drink Water' },
-    ],
-  };
+const AddHabit = (props) => {
+  const { habits } = props;
 
-  render() {
-    const { habits } = this.state;
-
-    return (
-      <div className="add-habit">
-        <h3>Pick one habit to get started</h3>
-        <h4>Most Popular Habits</h4>
-        <section className="add-habit-cards">
-          <ul>
-            {habits.map((habit) => (
-              <li key={habit.id}>
-                <Link to="/new/habit" className="add-habit-card-link">
-                  {habit.habit}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </div>
-    );
-  }
-}
-
+  return (
+    <div className="add-habit">
+      <h3>Pick one habit to get started</h3>
+      <h4>Most Popular Habits</h4>
+      <section className="add-habit-cards">
+        <ul>
+          {habits.map((habit) => (
+            <li key={habit.id}>
+              <Link
+                to={habit.id === 0 ? '/newHabit/new' : `/newHabit/${habit.id}`}
+              >
+                {habit.habit}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  );
+};
+AddHabit.propTypes = {
+  habits: PropTypes.shape.isRequired,
+};
 export default AddHabit;
