@@ -27,6 +27,7 @@ class App extends React.Component {
   render() {
     const { name } = this.state;
     return (
+<<<<<<< HEAD
       <div className="app">
         <img src={logo} alt="logo" />
         <Router>
@@ -58,6 +59,34 @@ class App extends React.Component {
           </Switch>
         </Router>
       </div>
+=======
+      <Router>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={(props) => <Home handleName={this.handleName} {...props} />}
+          />
+
+          <Route
+            exact
+            path="/profile"
+            render={(props) => <HabitProfile name={name} {...props} />}
+          />
+          <Route
+            exact
+            path="/new"
+            render={(props) => (
+              <>
+                <HabitProfile name={name} {...props} />
+                <AddHabit {...props} />
+              </>
+            )}
+          />
+          <Redirect to="/" />
+        </Switch>
+      </Router>
+>>>>>>> 41e6afb599bef73776dca05139083570412397bb
     );
   }
 }
