@@ -17,12 +17,21 @@ const HabitProfile = (props) => {
       <section className="habit-profile-header">
         <img src={user} alt="user" />
         <h2 className="habit-profile-header-name">{name}</h2>
+        <Link to="/" className="habit-profile-header-logout link">
+          Log out
+        </Link>
       </section>
-      <Link to="/profile"> Pending </Link>
-      <Link to="/completed"> Completed </Link>
-      <Link to="/new" className="habit-profile-add">
-        <img src={add} alt="Add" />
-      </Link>
+      <section className="habit-profile-body">
+        <Link to="/profile" className="habit-profile-body-pending link">
+          Pending
+        </Link>
+        <Link to="/completed" className="link">
+          Completed
+        </Link>
+        <Link to="/new" className="habit-profile-body-add">
+          <img src={add} alt="Add" />
+        </Link>
+      </section>
       <section />
     </section>
   );
