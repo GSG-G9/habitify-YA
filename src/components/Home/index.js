@@ -32,12 +32,13 @@ class Home extends React.Component {
   render() {
     const { name } = this.state;
     return (
-      <div>
+      <div className="home">
         <h1>Welcome to Habitify</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="home-form">
           <label htmlFor="username">
             Enter your name :
             <input
+              className="home-form-text"
               type="text"
               id="username"
               value={name}
@@ -45,7 +46,7 @@ class Home extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          <input type="submit" value="Start" />
+          <input type="submit" value="Start" className="home-form-submit" />
         </form>
       </div>
     );
