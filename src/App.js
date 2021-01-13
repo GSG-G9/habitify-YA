@@ -29,7 +29,7 @@ class App extends React.Component {
     myHobies: [
       {
         id: Date.now(),
-        hobiName: 'CA Meeting',
+        hobiName: 'Good morning',
         repetition: 'daily',
         reminder: '2021-01-13T08:59',
         checkDone: false,
@@ -70,14 +70,16 @@ class App extends React.Component {
           <Route
             exact
             path="/profile"
-            render={(props) => <HabitProfile name={name} {...props} />}
+            render={(props) => (
+              <HabitProfile name={name} newHabit={myHobies} {...props} />
+            )}
           />
           <Route
             exact
             path="/new"
             render={(props) => (
               <>
-                <HabitProfile name={name} {...props} />
+                <HabitProfile name={name} newHabit={myHobies} {...props} />
                 <AddHabit habits={habits} {...props} />
               </>
             )}

@@ -64,3 +64,6 @@
     position: absolute;
        right: 3em;
 }
+.profile-habit-form{
+    list-style: none;
+}

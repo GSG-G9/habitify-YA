@@ -11,7 +11,7 @@ import add from '../../images/add.png';
 import './style.css';
 
 const HabitProfile = (props) => {
-  const { name } = props;
+  const { name, newHabit } = props;
   return (
     <section className="habit-profile">
       <section className="habit-profile-header">
@@ -31,6 +31,14 @@ const HabitProfile = (props) => {
         <Link to="/new" className="habit-profile-body-add">
           <img src={add} alt="Add" />
         </Link>
+        <form>
+          <input type="radio" />
+          <ul className="profile-habit-form">
+            {newHabit.map((habits) => (
+              <li key={habits.id}>{habits.hobiName}</li>
+            ))}
+          </ul>
+        </form>
       </section>
       <section />
     </section>
@@ -39,5 +47,6 @@ const HabitProfile = (props) => {
 
 HabitProfile.propTypes = {
   name: PropTypes.string.isRequired,
+  newHabit: PropTypes.shape.isRequired,
 };
 export default HabitProfile;
