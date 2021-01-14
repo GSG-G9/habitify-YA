@@ -22,10 +22,10 @@ const HabitProfile = (props) => {
         </Link>
       </section>
       <section className="habit-profile-body">
-        <Link to="/profile" className="habit-profile-body-pending link">
+        <Link to="/profile" className="habit-profile-body-nav-link link">
           Pending
         </Link>
-        <Link to="/completed" className="link">
+        <Link to="/completed" className="habit-profile-body-nav-link link">
           Completed
         </Link>
         <Link to="/new" className="habit-profile-body-add">

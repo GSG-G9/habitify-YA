@@ -44,20 +44,18 @@
     flex-flow: row ;
     position: relative;
     font-weight: bold;
-    
-
 }
-.habit-profile-body .link:first-of-type{
+.habit-profile-body .link{
     position: absolute;
-      left:10em;
+    left: 28em;
 }
 .habit-profile-body .link:nth-child(2){
     position: absolute;
       left:18em;
 }
-.habit-profile-body-pending {
-    padding-right:1.5em;
-
+.habit-profile-body-nav-link {
+    padding-top: 15px;
+    padding-left: 95px;
 }
 .habit-profile-body-add{
     align-self: flex-end;
