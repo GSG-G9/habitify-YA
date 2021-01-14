@@ -62,10 +62,13 @@ class HabitForm extends React.Component {
     const { hobiName } = this.state;
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="habitName">
-            Habit Name
+      <div className="habit-form-container">
+        <form onSubmit={this.handleSubmit} className="habit-form">
+          <h3 className="habit-form-h3">
+            Enter your habit details to get started
+          </h3>
+          <label htmlFor="habitName" className="habit-form-label">
+            <span className="habit-form-label-span">Habit Name</span>
             <input
               type="text"
               name="habit name"
@@ -73,35 +76,45 @@ class HabitForm extends React.Component {
               placeholder={habitId === 'new' ? hobiName : habits[habitId].habit}
               onChange={(e) => this.handleChange(e)}
               value={hobiName}
+              className="habit-form-name-input"
             />
           </label>
-          <label htmlFor="repetition">
-            repetition
+          <label htmlFor="repetition" className="habit-form-label">
+            <span className="habit-form-label-span">repetition</span>
             <select
               name="repetition"
               id="repetition"
               onChange={(e) => this.handleChangeSelect(e)}
+              className="habit-form-select-repetition"
             >
               <option value="daily">Daily</option>
               <option value="monthly">Monthly</option>
             </select>
           </label>
-          <label htmlFor="reminder">
-            reminder
+          <label htmlFor="reminder" className="habit-form-label">
+            <span className="habit-form-label-span">reminder</span>
             <input
               type="datetime-local"
               id="reminder"
               name="reminder"
               onChange={(e) => this.handleChangeReminder(e)}
+              className="habit-form-input-reminder"
             />
           </label>
-          <input type="submit" name="Apply" />
-          <input
-            type="button"
-            name="Discard"
-            value="Discard"
-            onClick={this.handleDiscard}
-          />
+          <div className="habit-form-buttons-div">
+            <input
+              type="button"
+              name="Discard"
+              value="Discard"
+              onClick={this.handleDiscard}
+              className="habit-form-discard-input"
+            />
+            <input
+              type="submit"
+              name="Apply"
+              className="habit-form-submit-input"
+            />
+          </div>
         </form>
       </div>
     );

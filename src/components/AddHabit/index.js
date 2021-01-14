@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { PropTypes } from 'prop-types';
 
+import './style.css';
+
 const AddHabit = (props) => {
   const { habits } = props;
 
