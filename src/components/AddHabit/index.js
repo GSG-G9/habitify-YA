@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { PropTypes } from 'prop-types';
 
+import './style.css';
+
 const AddHabit = (props) => {
   const { habits } = props;
 
@@ -16,6 +18,7 @@ const AddHabit = (props) => {
           {habits.map((habit) => (
             <li key={habit.id}>
               <Link
+                className="add-habit-card-link"
                 to={habit.id === 0 ? '/newHabit/new' : `/newHabit/${habit.id}`}
               >
                 {habit.habit}
